@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Flatiron&nbsp;school | Thoughts From Matt Fairbank]]></title>
+  <link href="http://mhfairbank.github.io/blog/categories/flatiron-school/atom.xml" rel="self"/>
+  <link href="http://mhfairbank.github.io/"/>
+  <updated>2014-09-30T21:23:52-04:00</updated>
+  <id>http://mhfairbank.github.io/</id>
+  <author>
+    <name><![CDATA[Matthew Fairbank]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My First Octopress Post]]></title>
+    <link href="http://mhfairbank.github.io/blog/2014/09/30/my-first-octopress-post/"/>
+    <updated>2014-09-30T21:15:52-04:00</updated>
+    <id>http://mhfairbank.github.io/blog/2014/09/30/my-first-octopress-post</id>
+    <content type="html"><![CDATA[<p>&ldquo;Aloha, World.&rdquo;</p>
+]]></content>
+  </entry>
+  
+</feed>
