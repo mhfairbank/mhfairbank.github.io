@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
+url: http://mhfairbank.github.io
 title: Thoughts From Matt Fairbank
 subtitle: Connections
 author: Matthew Fairbank
 simple_search: https://www.google.com/search
-description: Touching on technology, finance, and economics
+description: Touching on the economics of finance and technology
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
