@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Thoughts From Matt Fairbank</title>
+  <title>Mesh - Thoughts From Matt Fairbank</title>
   <meta name="author" content="Matthew Fairbank">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mhfairbank.github.io">
+  <link rel="canonical" href="http://mhfairbank.github.io/blog/2014/10/09/mesh">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Thoughts From Matt Fairbank" type="application/atom+xml">
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/10/09/mesh/">Mesh</a></h1>
+      <h1 class="entry-title">Mesh</h1>
     
     
       <p class="meta">
@@ -87,7 +84,7 @@
   </header>
 
 
-  <div class="entry-content"><p>In order to prevent myself from relying on the .each method whenever an iteration is necessary, I&rsquo;ve decided to take a closer look at methods that help reduce the need for multiple layers of nesting within my code. The .map (aka .collect) and .select methods drew my attention first. When called on an object, .map will iterate through the object, and return the evaluation of the accompanying code block into a new array.</p>
+<div class="entry-content"><p>In order to prevent myself from relying on the .each method whenever an iteration is necessary, I&rsquo;ve decided to take a closer look at methods that help reduce the need for multiple layers of nesting within my code. The .map (aka .collect) and .select methods drew my attention first. When called on an object, .map will iterate through the object, and return the evaluation of the accompanying code block into a new array.</p>
 
 <p>map.rb file:</p>
 
@@ -149,47 +146,46 @@
 
 <p> As this NPR article (<a href="http://www.npr.org/blogs/alltechconsidered/2014/09/29/352476454/how-hong-kong-protesters-are-connecting-without-cell-or-wi-fi-networks">http://www.npr.org/blogs/alltechconsidered/2014/09/29/352476454/how-hong-kong-protesters-are-connecting-without-cell-or-wi-fi-networks</a>) documents, protestors in Hong Kong have faced a shutdown of their internet service accessed from their phones, leaving them unable to effectively organize themselves. Enter Firechat, a new app that&rsquo;s been downloaded hundreds of thousands of times in Hong Kong over the last few weeks. Firechat enables phones to communicate directly with any other phones within wifi range. By linking these connections together into a mesh network, the protestors are able to communicate over the network, sans internet access. And, if at least one of the nodes in the network is connected to the internet, the other phones can access it by hopping from phone to phone until they reach the internet-connected node. The technology is still primitive: Firechat doesn&rsquo;t even implement encryption, so anyone on the network can sniff the data their node relays. But it&rsquo;s a start, and may well signal a future of the internet that does not have the functionality of &ldquo;turning off&rdquo;, as it does today with much more centralized access nodes.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matthew Fairbank</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-10-09T11:31:25-04:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:31 am</span></time>
+      
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2014/09/30/my-first-octopress-post/">My First Octopress Post</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-09-30T21:15:52-04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:15 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>&ldquo;Aloha, World.&rdquo;</p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://mhfairbank.github.io/blog/2014/10/09/mesh/" data-via="" data-counturl="http://mhfairbank.github.io/blog/2014/10/09/mesh/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/09/30/my-first-octopress-post/" title="Previous Post: My First Octopress Post">&laquo; My First Octopress Post</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -213,6 +209,7 @@
 
   
 </aside>
+
 
     </div>
   </div>

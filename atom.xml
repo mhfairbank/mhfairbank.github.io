@@ -4,7 +4,7 @@
   <title><![CDATA[Thoughts From Matt Fairbank]]></title>
   <link href="http://mhfairbank.github.io/atom.xml" rel="self"/>
   <link href="http://mhfairbank.github.io/"/>
-  <updated>2014-09-30T21:23:52-04:00</updated>
+  <updated>2014-10-09T16:41:34-04:00</updated>
   <id>http://mhfairbank.github.io/</id>
   <author>
     <name><![CDATA[Matthew Fairbank]]></name>
@@ -12,6 +12,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mesh]]></title>
+    <link href="http://mhfairbank.github.io/blog/2014/10/09/mesh/"/>
+    <updated>2014-10-09T11:31:25-04:00</updated>
+    <id>http://mhfairbank.github.io/blog/2014/10/09/mesh</id>
+    <content type="html"><![CDATA[<p>In order to prevent myself from relying on the .each method whenever an iteration is necessary, I&rsquo;ve decided to take a closer look at methods that help reduce the need for multiple layers of nesting within my code. The .map (aka .collect) and .select methods drew my attention first. When called on an object, .map will iterate through the object, and return the evaluation of the accompanying code block into a new array.</p>
+
+<p>map.rb file:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">orig_array</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;alo&quot;</span><span class="p">,</span> <span class="s2">&quot;ha&quot;</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">orig_array</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span><span class="o">|</span><span class="n">string</span><span class="o">|</span> <span class="n">string</span> <span class="o">+</span> <span class="s2">&quot;ha&quot;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And when we run map.rb:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ruby map.rb
+</span><span class='line'>aloha
+</span><span class='line'>haha
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The code block concatenated an additional &ldquo;ha&rdquo; onto both strings in the original array, and populated a new array with the new strings.</p>
+
+<p>The .select method allows us to evaluate a block of code for each element in the original array, and if the evaluation returns true, the method will populate a new array with the original value from the array upon which .select was called.</p>
+
+<p>select.rb file:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">orig_array</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;some&quot;</span><span class="p">,</span> <span class="s2">&quot;of&quot;</span><span class="p">,</span> <span class="s2">&quot;these&quot;</span><span class="p">,</span> <span class="s2">&quot;words&quot;</span><span class="p">,</span> <span class="s2">&quot;have&quot;</span><span class="p">,</span> <span class="s2">&quot;four&quot;</span><span class="p">,</span> <span class="s2">&quot;letters&quot;</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">orig_array</span><span class="o">.</span><span class="n">select</span> <span class="p">{</span><span class="o">|</span><span class="n">string</span><span class="o">|</span> <span class="n">string</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">4</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And when we run select.rb:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="o">[</span>16:20:26<span class="o">]</span> <span class="o">(</span><span class="nb">source</span><span class="o">)</span> code
+</span><span class='line'>♥ ruby <span class="k">select</span>.rb
+</span><span class='line'>some
+</span><span class='line'>have
+</span><span class='line'>four
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The code block evaluates whether the string has four characters, and the .select method populates a new array with the original items whenever the code block evaluation returns true.</p>
+
+<p>Finally I&rsquo;d like to touch on an emerging technology in the web/tech sphere: mesh networks.</p>
+
+<p><img src="http://i.imgur.com/C1yubIf.jpg"></p>
+
+<p> As this NPR article (<a href="http://www.npr.org/blogs/alltechconsidered/2014/09/29/352476454/how-hong-kong-protesters-are-connecting-without-cell-or-wi-fi-networks">http://www.npr.org/blogs/alltechconsidered/2014/09/29/352476454/how-hong-kong-protesters-are-connecting-without-cell-or-wi-fi-networks</a>) documents, protestors in Hong Kong have faced a shutdown of their internet service accessed from their phones, leaving them unable to effectively organize themselves. Enter Firechat, a new app that&rsquo;s been downloaded hundreds of thousands of times in Hong Kong over the last few weeks. Firechat enables phones to communicate directly with any other phones within wifi range. By linking these connections together into a mesh network, the protestors are able to communicate over the network, sans internet access. And, if at least one of the nodes in the network is connected to the internet, the other phones can access it by hopping from phone to phone until they reach the internet-connected node. The technology is still primitive: Firechat doesn&rsquo;t even implement encryption, so anyone on the network can sniff the data their node relays. But it&rsquo;s a start, and may well signal a future of the internet that does not have the functionality of &ldquo;turning off&rdquo;, as it does today with much more centralized access nodes.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My First Octopress Post]]></title>
