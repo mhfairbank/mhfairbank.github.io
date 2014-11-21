@@ -9,7 +9,7 @@
   <meta name="author" content="Matthew Fairbank">
 
   
-  <meta name="description" content="In order to prevent myself from relying on the .each method whenever an iteration is necessary, I&rsquo;ve decided to take a closer look at methods &hellip;">
+  <meta name="description" content="Encryption keys make possible many of the most convenient aspects of the internet today. Online banking, healthcare, and investing services rely &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/11/20/on-randos/">On Randos</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-20T21:44:09-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Encryption keys make possible many of the most convenient aspects of the internet today. Online banking, healthcare, and investing services rely heavily on passwords to ensure the safety of our data. &ldquo;Secure&rdquo; data transfer is a bit of misnomer: it is trivial for a malicious party to gain access to data transferring across the web. Thus the need for encryption, ensuring said data can only be read by the intended recipient. Random numbers are the backbone of generating encryption keys, but there&rsquo;s one problem, humans, and computers, are TERRIBLE at generating passwords and random numbers, respectively. Computer programs follow pre-written instructions, and it is therefore impossible for them to generate truly random numbers. So what happens when we type rand into our Ruby programs? A pseudo-random number generator is used; in ruby&rsquo;s case, a Mersenne Twister. By far the most common PRNG, the Mersenne Twister is unfortunately not robust enough for use in cryptography, as observing relatively few cycles enables the prediction of future output.</p>
+
+<p>So what do? Enter the HARDWARE random number generator:</p>
+
+<p><img src="http://onerng.info/img/BoardAndTinfoilHat.png"></p>
+
+<p>OneRNG provides a simple open source method for generating random numbers, relying on entropy from an avalanche diode circuit (your guess is as good as mine) and an RF receiver that channel hops among radio waves. Now, this does not provide true randomness, but is much better than Ruby&rsquo;s Random.</p>
+
+<p>You be asking, why mess with these imperfect solutions, surely there must be a way to generate a real random number for Pete&rsquo;s sake!  Take a look:</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/7/7d/NuclearReaction.png"></p>
+
+<p>Radioactive particles decay stochastically, preventing an observer from predicting future decay. Be sure to use a Geiger counter if you go this route.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -195,6 +236,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/11/20/on-randos/">On Randos</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/10/09/mesh/">Mesh</a>
