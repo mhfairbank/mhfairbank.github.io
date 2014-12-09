@@ -9,7 +9,7 @@
   <meta name="author" content="Matthew Fairbank">
 
   
-  <meta name="description" content="Encryption keys make possible many of the most convenient aspects of the internet today. Online banking, healthcare, and investing services rely &hellip;">
+  <meta name="description" content="It&rsquo;s time. You&rsquo;ve put in the hard work and the long hours. Deployment is all that stands between you and a real working website &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -65,6 +65,41 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/09/abcdeploy/">ABCDeploy</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-09T21:44:09-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s time. You&rsquo;ve put in the hard work and the long hours. Deployment is all that stands between you and a real working website accessible over the internet. You push to Heroku, and you load your page. It works! Wait a minute, no, it doesn’t work. It looks like it works, but some of the features don’t operate like they did on your local machine. What’s going on? By this time, you already know the answer, but you’re dreading it so much that fanciful alternative excuses are already floating through your mind: “Heroku must not be working…Al Gore decided to break the internet…My code became self-aware and rewrote itself…” But no. JAVASCRIPT is the source of your pain, and was the source of our pain when we deployed to Heroku earlier this week.</p>
+
+<p>So what do? First you head back to your local machine, and sure enough, all of the JavaScript features work. And then you notice it: a singular, red “!” in the console, denoting an error during resource loading.</p>
+
+<p><img src="http://i.imgur.com/FA75pGa.png"></p>
+
+<p>“Error: Popover requires tooltip.js”. You receive this error on your local machine, but all of your features work, so why is this a problem? Besides, websites have errors loading resources all the time, without noticeable effect. You’re not even using anything from popover.js, or tooltip.js. Alas, Heroku does something your local machine does not: it compiles all of your application’s JavaScript into ONE file, and one broken line of code in this file can break the ENTIRE file, rendering your JavaScript useless. Now, you’re left with two options. If you’re an unlucky individual (this is the most likely scenario), your program actually is using popover.js and/or tooltip.js, and you must attack your asset pipeline without mercy, working out kinks and making sure files are explicitly loaded in a certain order to resolve dependencies. Or you can delete popover and tooltip, and redeploy to Heroku, and suddenly your app will run flawlessly. Worked for us!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -236,6 +271,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/09/abcdeploy/">ABCDeploy</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/11/20/on-randos/">On Randos</a>

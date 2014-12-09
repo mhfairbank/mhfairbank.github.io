@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>On Randos - Thoughts From Matt Fairbank</title>
+  <title>ABCDeploy - Thoughts From Matt Fairbank</title>
   <meta name="author" content="Matthew Fairbank">
 
   
-  <meta name="description" content="Encryption keys make possible many of the most convenient aspects of the internet today. Online banking, healthcare, and investing services rely &hellip;">
+  <meta name="description" content="It&rsquo;s time. You&rsquo;ve put in the hard work and the long hours. Deployment is all that stands between you and a real working website &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://mhfairbank.github.io/blog/2014/11/20/on-randos">
+  <link rel="canonical" href="http://mhfairbank.github.io/blog/2014/12/09/abcdeploy">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Thoughts From Matt Fairbank" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">On Randos</h1>
+      <h1 class="entry-title">ABCDeploy</h1>
     
     
       <p class="meta">
@@ -77,26 +77,20 @@
 
 
 
-<time class='entry-date' datetime='2014-11-20T21:44:09-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
+<time class='entry-date' datetime='2014-12-09T21:44:09-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Encryption keys make possible many of the most convenient aspects of the internet today. Online banking, healthcare, and investing services rely heavily on passwords to ensure the safety of our data. &ldquo;Secure&rdquo; data transfer is a bit of misnomer: it is trivial for a malicious party to gain access to data transferring across the web. Thus the need for encryption, ensuring said data can only be read by the intended recipient. Random numbers are the backbone of generating encryption keys, but there&rsquo;s one problem, humans, and computers, are TERRIBLE at generating passwords and random numbers, respectively. Computer programs follow pre-written instructions, and it is therefore impossible for them to generate truly random numbers. So what happens when we type rand into our Ruby programs? A pseudo-random number generator is used; in ruby&rsquo;s case, a Mersenne Twister. By far the most common PRNG, the Mersenne Twister is unfortunately not robust enough for use in cryptography, as observing relatively few cycles enables the prediction of future output.</p>
+<div class="entry-content"><p>It&rsquo;s time. You&rsquo;ve put in the hard work and the long hours. Deployment is all that stands between you and a real working website accessible over the internet. You push to Heroku, and you load your page. It works! Wait a minute, no, it doesn’t work. It looks like it works, but some of the features don’t operate like they did on your local machine. What’s going on? By this time, you already know the answer, but you’re dreading it so much that fanciful alternative excuses are already floating through your mind: “Heroku must not be working…Al Gore decided to break the internet…My code became self-aware and rewrote itself…” But no. JAVASCRIPT is the source of your pain, and was the source of our pain when we deployed to Heroku earlier this week.</p>
 
-<p>So what do? Enter the HARDWARE random number generator:</p>
+<p>So what do? First you head back to your local machine, and sure enough, all of the JavaScript features work. And then you notice it: a singular, red “!” in the console, denoting an error during resource loading.</p>
 
-<p><img src="http://onerng.info/img/BoardAndTinfoilHat.png"></p>
+<p><img src="http://i.imgur.com/FA75pGa.png"></p>
 
-<p>OneRNG provides a simple open source method for generating random numbers, relying on entropy from an avalanche diode circuit (your guess is as good as mine) and an RF receiver that channel hops among radio waves. Now, this does not provide true randomness, but is much better than Ruby&rsquo;s Random.</p>
-
-<p>You be asking, why mess with these imperfect solutions, surely there must be a way to generate a real random number for Pete&rsquo;s sake!  Take a look:</p>
-
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/7/7d/NuclearReaction.png"></p>
-
-<p>Radioactive particles decay stochastically, preventing an observer from predicting future decay. Be sure to use a Geiger counter if you go this route.</p>
+<p>“Error: Popover requires tooltip.js”. You receive this error on your local machine, but all of your features work, so why is this a problem? Besides, websites have errors loading resources all the time, without noticeable effect. You’re not even using anything from popover.js, or tooltip.js. Alas, Heroku does something your local machine does not: it compiles all of your application’s JavaScript into ONE file, and one broken line of code in this file can break the ENTIRE file, rendering your JavaScript useless. Now, you’re left with two options. If you’re an unlucky individual (this is the most likely scenario), your program actually is using popover.js and/or tooltip.js, and you must attack your asset pipeline without mercy, working out kinks and making sure files are explicitly loaded in a certain order to resolve dependencies. Or you can delete popover and tooltip, and redeploy to Heroku, and suddenly your app will run flawlessly. Worked for us!</p>
 </div>
 
 
@@ -112,7 +106,7 @@
 
 
 
-<time class='entry-date' datetime='2014-11-20T21:44:09-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
+<time class='entry-date' datetime='2014-12-09T21:44:09-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:44 pm</span></time>
       
 
 
@@ -120,7 +114,7 @@
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://mhfairbank.github.io/blog/2014/11/20/on-randos/" data-via="" data-counturl="http://mhfairbank.github.io/blog/2014/11/20/on-randos/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://mhfairbank.github.io/blog/2014/12/09/abcdeploy/" data-via="" data-counturl="http://mhfairbank.github.io/blog/2014/12/09/abcdeploy/" >Tweet</a>
   
   
   
@@ -129,10 +123,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/10/09/mesh/" title="Previous Post: Mesh">&laquo; Mesh</a>
+        <a class="basic-alignment left" href="/blog/2014/11/20/on-randos/" title="Previous Post: On Randos">&laquo; On Randos</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/12/09/abcdeploy/" title="Next Post: ABCDeploy">ABCDeploy &raquo;</a>
       
     </p>
   </footer>
